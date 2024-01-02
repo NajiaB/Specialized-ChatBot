@@ -11,7 +11,6 @@ from langchain.chains.question_answering import load_qa_chain
 from openai import OpenAI
 from langchain.chat_models import ChatOpenAI
 import tiktoken
-OPENAI_API_KEY = "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"
 
 st.header('2022 World Cup chatbot')
 
