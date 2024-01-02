@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Mon Jan  1 14:50:07 2024
 
-@author: BOUADDOUCH Najia
-"""
 
 import streamlit as st
 import PyPDF2 as pdf
