@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Mon Jan  1 14:50:07 2024
 
-@author: BOUADDOUCH Najia
-"""
 
 import streamlit as st
 import PyPDF2 as pdf
@@ -15,6 +11,7 @@ from langchain.chains.question_answering import load_qa_chain
 from openai import OpenAI
 from langchain.chat_models import ChatOpenAI
 import tiktoken
+<<<<<<< HEAD
 import os
 
 #get the openai api key (environment variable)
