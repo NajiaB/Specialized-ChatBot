@@ -14,7 +14,8 @@ from langchain.vectorstores import FAISS
 from langchain.chains.question_answering import load_qa_chain
 from openai import OpenAI
 from langchain.chat_models import ChatOpenAI
-
+import tiktoken
+OPENAI_API_KEY = "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"
 
 st.header('2022 World Cup chatbot')
 
@@ -53,16 +54,16 @@ if file is not None:
     #similarity search
     if question :
         match=vector_store.similarity_search(question)
-        st.write(match)
+        #st.write(match)
         
-        # llm=ChatOpenAI(openai_api_key=OPENAI_API_KEY,
-        #                temperature =0,
-        #                max_tokens=1000
-        #                )
+        llm=ChatOpenAI(openai_api_key=OPENAI_API_KEY,
+                        temperature =0,
+                        max_tokens=1000
+                        )
         
-        # chain = load_qa_chain(llm,chain_type="stuff")
-        # response= chain.run(input_documents=match, question=question)
-        # st.write(response)
+        chain = load_qa_chain(llm,chain_type="stuff")
+        response= chain.run(input_documents=match, question=question)
+        st.write(response)
         
         
         
