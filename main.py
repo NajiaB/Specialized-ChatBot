@@ -13,9 +13,8 @@ from langchain.chat_models import ChatOpenAI
 import tiktoken
 import os
 
-#get the openai api key (environment variable)
-OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY')
-
+#get the local openai api key (environment variable)
+#OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY')
 
 
 st.header('2022 World Cup chatbot')
@@ -23,6 +22,7 @@ st.header('2022 World Cup chatbot')
 with st.sidebar:
     st.title("documents")
     file = st.file_uploader("please upload a PDF", type="pdf")
+    OPENAI_API_KEY = st.text_input("Enter your OpenAI API key:", type="password")
     
 if file is not None:
     pdf_reader = pdf.PdfReader(file)
@@ -66,9 +66,4 @@ if file is not None:
         response= chain.run(input_documents=match, question=question)
         st.write(response)
         
-        
-        
-    
-    
-     
-    
+
