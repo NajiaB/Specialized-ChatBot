@@ -11,7 +11,6 @@ from langchain.chains.question_answering import load_qa_chain
 from openai import OpenAI
 from langchain.chat_models import ChatOpenAI
 import tiktoken
-<<<<<<< HEAD
 import os
 
 #get the openai api key (environment variable)
